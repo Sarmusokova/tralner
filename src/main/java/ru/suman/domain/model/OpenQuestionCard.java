@@ -31,6 +31,9 @@ public class OpenQuestionCard {
     public Long getId() {
         return id;
     }
+    public String getExpectedAnswer() {
+        return expectedAnswer;
+    }
 
     @Override
     public String toString() {
