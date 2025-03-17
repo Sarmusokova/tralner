@@ -12,7 +12,7 @@ class OpenQuestionCardTest {
 
     @BeforeEach
     void setUp() {
-        card = new OpenQuestionCard("Сколько планет в Солнечной системе?", "Восемь");
+        card = new OpenQuestionCard(1L,"Сколько планет в Солнечной системе?", "Восемь");
     }
 
     @Test
@@ -45,14 +45,14 @@ class OpenQuestionCardTest {
     void testCreateCardWithLongQuestion() {
         String longQuestion = "а".repeat(1000);
         String longAnswer = "б".repeat(1000);
-        OpenQuestionCard longCard = new OpenQuestionCard(longQuestion, longAnswer);
+        OpenQuestionCard longCard = new OpenQuestionCard(card.getId(), longQuestion, longAnswer);
         assertEquals(longQuestion, longCard.getQuestion(), "Должен поддерживаться длинный текст вопроса");
     }
 
     @Test
     @DisplayName("Проверка чувствительности к регистру при создании объекта")
     void testCaseSensitivityInAnswer() {
-        OpenQuestionCard mixedCaseCard = new OpenQuestionCard("Как зовут кота?", "Барсик");
+        OpenQuestionCard mixedCaseCard = new OpenQuestionCard(1L,"Как зовут кота?", "Барсик");
         assertTrue(mixedCaseCard.checkAnswer("барсик"), "Ответ должен проверяться без учета регистра");
     }
 }
