@@ -15,6 +15,7 @@
     <module>tralner_in_memory</module>
     <module>tralner_db_jdbc</module>
     <module>tralner_db_spring_jdbc</module>
+    <module>traIner_ui_swing</module>
   </modules>
 
   <properties>
