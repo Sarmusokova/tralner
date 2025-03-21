@@ -1,9 +1,10 @@
-package ru.suman;
+package ru.suman.console;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.suman.config.SpringConfig;
-import ru.suman.controller.ConsoleController;
+import ru.suman.console.config.SpringConfig;
+import ru.suman.console.controller.ConsoleController;
+
 
 public class Application {
     public static void main(String[] args) {
