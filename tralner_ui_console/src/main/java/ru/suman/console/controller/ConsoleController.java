@@ -1,4 +1,4 @@
-package ru.suman.controller;
+package ru.suman.console.controller;
 
 import org.springframework.stereotype.Component;
 import ru.suman.domain.model.OpenQuestionCard;
