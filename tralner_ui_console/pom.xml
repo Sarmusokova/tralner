@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>ru.suman</groupId>
-            <artifactId>tralner_db_spring_jdbc</artifactId>
+            <artifactId>trainer_feigh_client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

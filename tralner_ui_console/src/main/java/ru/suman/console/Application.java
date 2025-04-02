@@ -1,15 +1,28 @@
 package ru.suman.console;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.suman.console.config.SpringConfig;
+import org.springframework.context.annotation.ComponentScan;
 import ru.suman.console.controller.ConsoleController;
 
 
-public class Application {
+@ComponentScan(basePackages = "ru.suman")
+@SpringBootApplication
+public class Application  implements CommandLineRunner {
+    @Autowired
+    private ConsoleController controller;
+
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        ConsoleController controller = context.getBean(ConsoleController.class);
+        ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
         controller.interactWithUser();
     }
 }
